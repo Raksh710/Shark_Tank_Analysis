@@ -126,4 +126,4 @@ wrapt==1.14.1
 wsproto==1.1.0
 WTForms==3.0.1
 zipp==3.11.0
-gunicorn
+gunicorn==19.9.0
