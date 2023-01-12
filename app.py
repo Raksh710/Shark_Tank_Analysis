@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[3]:
 
 
 # importing all the neccessary libraries
@@ -299,23 +299,35 @@ def predict():
                                    Eth1_1 , Eth1_2, Eth1_3, Eth1_4, Eth2_0, Eth2_1, Eth2_2,
                                    Eth2_3, Eth2_4, Eth3_0, Eth3_1, Eth3_2, Eth3_4, Eth4_0,
                                    Eth4_2, Eth5_0, Eth5_2 ]])
-                                
-        
+                           
+        deal_yes_prob = model.predict_proba([[Number_of_Presenters, Male1, Male2, Male3, Male4, Novelties,
+                                   Health_Wellness, Food_and_Beverage, Business_Services,
+                                   Lifestyle_Home, Software_Tech , Children_Education,
+                                   Automotive, Fashion_Beauty , Media_Entertainment,
+                                   Fitness_Sports_Outdoor, Pet_Products, Travel,
+                                   Green_CleanTech, Uncertain_Other, MalePresenter,
+                                   FemalePresenter, MixedGenderPresenters, AmountRequested,
+                                   EquityRequested, ImpliedValuationRequested, BarbaraCorcoran,
+                                   MarkCuban, LoriGreiner, RobertHerjavec, DaymondJohn,
+                                   KevinOLeary, KevinHarrington, Guest, Total_Males,
+                                   Total_Females, Total_Pitchers, Region_East_North_Central,
+                                   Region_East_South_Central, Region_Mid_Atlantic, Region_Mountain,
+                                   Region_New_England, Region_Pacific, Region_South_Atlantic,
+                                   Region_West_North_Central, Region_West_South_Central, Eth1_0,
+                                   Eth1_1 , Eth1_2, Eth1_3, Eth1_4, Eth2_0, Eth2_1, Eth2_2,
+                                   Eth2_3, Eth2_4, Eth3_0, Eth3_1, Eth3_2, Eth3_4, Eth4_0,
+                                   Eth4_2, Eth5_0, Eth5_2 ]])
         #prediction=model.predict([[Present_Price,Kms_Driven2,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual]])
         output= pred[0]
+        yes_deal_prob = round(100*deal_yes_prob[0][1] , 2)
+        
         if output==0:
-            return render_template('index.html',prediction_texts="No Deal. Sorry")
+            return render_template('index.html',prediction_texts=f"No Deal. Your chances of getting a deal is only: {yes_deal_prob}%. Sorry, but we wish you all the best.")
         else:
-            return render_template('index.html',prediction_text="You got the deal")
+            return render_template('index.html',prediction_text=f"You got the deal. Strong probabilty of {yes_deal_prob}% of getting the deal.")
     else:
         return render_template('index.html')
 
 if __name__=="__main__":
     app.run(debug=True,use_reloader=False)
-
-
-# In[ ]:
-
-
-
 
