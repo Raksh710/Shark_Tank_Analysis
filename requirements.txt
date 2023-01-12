@@ -64,8 +64,6 @@ murmurhash==1.0.7
 nltk==3.7
 numba==0.56.4
 oauthlib==3.2.0
-opencv-python==4.5.5.64
-opencv-python-headless==4.5.5.64
 openpyxl==3.0.10
 opt-einsum==3.3.0
 outcome==1.1.0
@@ -89,7 +87,6 @@ Pympler==1.0.1
 pyOpenSSL==22.0.0
 pyrsistent==0.19.3
 PySocks==1.7.1
-pytz-deprecation-shim==0.1.0.post0
 pywin32==302
 regex==2022.4.24
 requests==2.27.1
