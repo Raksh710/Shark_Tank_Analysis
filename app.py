@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 # importing all the neccessary libraries
@@ -319,7 +319,6 @@ def predict():
                                    Eth1_1 , Eth1_2, Eth1_3, Eth1_4, Eth2_0, Eth2_1, Eth2_2,
                                    Eth2_3, Eth2_4, Eth3_0, Eth3_1, Eth3_2, Eth3_4, Eth4_0,
                                    Eth4_2, Eth5_0, Eth5_2 ]])
-        #prediction=model.predict([[Present_Price,Kms_Driven2,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual]])
         output= pred[0]
         yes_deal_prob = round(100*deal_yes_prob[0][1] , 2)
         
