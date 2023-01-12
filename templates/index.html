@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Shark Tank Deal Prediction</h2>
+            <h3>Number of Presenters (Not more than 5 ideally)</h3> <input id="one" name="Number_of_Presenters" type="number" required="required">
+            <h3>Gender of First Presenter (1 for Male and 0 for Otherwise)</h3><br><input id="two" name="Male1" required="required">
+            <h3>Gender of Second Presenter (1 for Male and 0 for Otherwise)</h3><br><input id="three" name="Male2" required="required">
+            <h3>Gender of Third Presenter (1 for Male and 0 for Otherwise)</h3><br><input id="four" name="Male3" required="required">
+            <h3>Gender of Fourth Presenter (1 for Male and 0 for Otherwise)</h3><br><input id="five" name="Male4" required="required">
+            <h3>Were there any 'Novelty' products? </h3><br><input id="six" name="Novelty" required="required">
+            <h3>Did the product belong to 'Health/Wellness' domain? (1 for Yes and 0 otherwise)</h3><br><input id="seven" name="Health/Wellness" required="required">
+            <h3>Did the product belong to 'Food and Beverage' domain? (1 for Yes and 0 otherwise)</h3><br><input id="eight" name="Food_and_Beverage" required="required">
+            <h3>Did the product belong to 'Software/Tech' domain? (1 for Yes and 0 otherwise)</h3><br><input id="nine" name="Software/Tech" required="required">
+            <h3>Did the product belong to 'Business Services' domain? (1 for Yes and 0 otherwise)</h3><br><input id="nine" name="Business_Services" required="required">
+            <h3>Did the product belong to 'Children/Education' domain? (1 for Yes and 0 otherwise)</h3><br><input id="ten" name="Children/Education" required="required">
+            <h3>Did the product belong to 'Lifestyle/Home' domain? (1 for Yes and 0 otherwise)</h3><br><input id="eleven" name="Lifestyle/Home" required="required">
+            <h3>Did the product belong to 'Automotive' domain? (1 for Yes and 0 otherwise)</h3><br><input id="twelve" name="Automotive" required="required">
+            <h3>Did the product belong to 'Fashion/Beauty' domain? (1 for Yes and 0 otherwise)</h3><br><input id="thirteen" name="Fashion/Beauty" required="required">
+            <h3>Did the product belong to 'Fitness/Sports/Outdoor' domain? (1 for Yes and 0 otherwise)</h3><br><input id="thirteen" name="Fitness/Sports/Outdoor" required="required">
+            
+            <h3>Did the product belong to 'Media/Enterntainment' domain? (1 for Yes and 0 otherwise)</h3><br><input id="fourteen" name="Media/Entertainment" required="required">
+            <h3>Did the product belong to 'Pet Products' domain? (1 for Yes and 0 otherwise)</h3><br><input id="fifeteen" name="Pet_Products" required="required">
+            <h3>Did the product belong to 'Travel' domain? (1 for Yes and 0 otherwise)</h3><br><input id="sixteen" name="Travel" required="required">
+            <h3>Did the product belong to 'Green/CleanTech' domain? (1 for Yes and 0 otherwise)</h3><br><input id="seventeen" name='Green/CleanTech' required="required">
+            <h3>Did the product belong to 'Uncertain/Other' domain? (1 for Yes and 0 otherwise)</h3><br><input id="eighteenth" name='Uncertain/Other' required="required"> 
+            <h3>Were there only Male Presenters? (1 for Yes and 0 otherwise)</h3><br><input id="nineteen" name='MalePresenter' required="required">
+            <h3>Were there only Female Presenters? (1 for Yes and 0 otherwise)</h3><br><input id="twenty" name='FemalePresenter' required="required">
+            <h3>Were there Mix Gender Presenters? (1 for Yes and 0 otherwise)</h3><br><input id="twenty-one" name='MixedGenderPresenters' required="required">
+            <h3>Total Amount Requested?</h3><br><input id="twenty-two" name='AmountRequested' required="required">
+            <h3>Total Equity Offered?</h3><br><input id="twenty-three" name='EquityRequested' required="required">
+            <h3>What is the Implied Valuation?</h3><br><input id="twenty-four" name='ImpliedValuationRequested' required="required">
+            <h3>Was Barbara Corcoran Present?</h3><br><input id="twenty-five" name='BarbaraCorcoran' required="required">
+            <h3>Was Mark Cuban Present?</h3><br><input id="twenty-six" name='MarkCuban' required="required">
+            <h3>Was Lori Greiner Present?</h3><br><input id="twenty-seven" name='LoriGreiner' required="required">
+            <h3>Was Robert Herjavec Present?</h3><br><input id="twenty-eight" name='RobertHerjavec' required="required">
+            <h3>Was Daymond John Present?</h3><br><input id="twenty-nine" name='DaymondJohn' required="required">
+            <h3>Was Kevin O'Leary Present?</h3><br><input id="thirty" name='KevinOLeary' required="required">
+            <h3>Was Kevin Harrington Present?</h3><br><input id="thirty-one" name='KevinHarrington' required="required">
+            <h3>Was there any Guest Shark Present?</h3><br><input id="thirty-two" name='Guest' required="required">
+            <h3>Number of Males in the pitching team?</h3><br><input id="thirty-three" name='Total_Males' required="required">
+            <h3>Number of Females in the pitching team?</h3><br><input id="thirty-four" name='Total_Females' required="required">
+            <h3>Total Number of Pitchers?</h3><br><input id="thirty-five" name='Total_Pitchers' required="required">
+
+            <h3>In which Region is your Business located?</h3><br><select name="Region" id="thirty-six" required="required">
+                <option value="East North Central">East North Central</option>
+                <option value="East South Central">East South Central</option>
+                <option value="Mid-Atlantic">Mid-Atlantic</option>
+                <option value="Mountain">Mountain</option>
+                <option value="New England">New England</option>
+                <option value="Pacific">Pacific</option>
+                <option value="South Atlantic">South Atlantic</option>
+                <option value="West North Central">West North Central</option>
+                <option value="West South Central">West South Central</option>
+
+            </select>
+
+
+            <h3>What is the Ethnicity of presenter 1?</h3><br><select name="Eth1" id="fuel" required="required">
+                <option value=1>African American</option>
+                <option value=2>White</option>
+                <option value=3>Asian</option>
+                <option value=4>Hispanic/Latino</option>
+                <option value=0>No Presenter</option>
+            </select>
+
+            <h3>What is the Ethnicity of presenter 2?</h3><br><select name="Eth2" id="fuel" required="required">
+                <option value=1>African American</option>
+                <option value=2>White</option>
+                <option value=3>Asian</option>
+                <option value=4>Hispanic/Latino</option>
+                <option value=0>No Presenter</option>
+            </select>
+
+            <h3>What is the Ethnicity of presenter 3?</h3><br><select name="Eth3" id="fuel" required="required">
+                <option value=1>African American</option>
+                <option value=2>White</option>
+                <option value=4>Hispanic/Latino</option>
+                <option value=0>No Presenter</option>
+            </select>
+
+            <h3>What is the Ethnicity of presenter 4?</h3><br><select name="Eth4" id="fuel" required="required">
+                <option value=2>White</option>
+                <option value=0>No Presenter</option>
+            </select>
+
+            <h3>What is the Ethnicity of presenter 5?</h3><br><select name="Eth5" id="fuel" required="required">
+                <option value=2>White</option>
+                <option value=0>No Presenter</option>
+            </select>
+
+            <br><br><button id="sub" type="submit ">Are you going to get the Deal? (Click here to find out)</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 100px;
+            border-color: 50px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #one {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #two {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #three {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #four {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+    </style>
+</body>
+
+</html>
