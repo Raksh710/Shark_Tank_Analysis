@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
+import pickle
 import joblib
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
@@ -18,6 +19,7 @@ import jsonify
 import requests
 
 app = Flask(__name__)
+#model = pickle.load(open('Final_Shark_Tank_Pipeline.pkl', 'rb'))
 model = joblib.load('pipeline_knn_44_final.pkl')
 
 @app.route('/',methods=['GET'])
