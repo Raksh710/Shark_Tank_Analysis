@@ -6,7 +6,6 @@ attrs==21.4.0
 blinker==1.5
 blis==0.7.7
 Brotli==1.0.9
-bs4==0.0.1
 cachetools==5.1.0
 catalogue==2.0.7
 certifi==2022.6.15
@@ -37,7 +36,6 @@ graphviz==0.20
 grpcio==1.46.3
 h11==0.13.0
 h5py==3.7.0
-haar-cascade-nms==1.1.1
 idna==3.3
 importlib-metadata==6.0.0
 itsdangerous==2.1.2
@@ -83,7 +81,6 @@ rich==13.0.1
 rsa==4.8
 scikit-learn==1.1.1
 scipy==1.8.1
-seaborn==0.11.2
 semver==2.13.0
 setuptools-git==1.2
 shap==0.41.0
@@ -95,12 +92,7 @@ sniffio==1.2.0
 snscrape==0.4.3.20220106
 sortedcontainers==2.4.0
 soupsieve==2.3.2.post1
-spacy==3.3.0
-spacy-legacy==3.0.9
-spacy-loggers==1.0.2
 srsly==2.4.3
-statsmodels==0.13.2
-streamlit==1.16.0
 tenacity==8.0.1
 termcolor==1.1.0
 thinc==8.0.16
