@@ -32,7 +32,6 @@ GitPython==3.1.30
 google-auth==2.6.6
 google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
-graphviz==0.20
 grpcio==1.46.3
 h11==0.13.0
 h5py==3.7.0
@@ -107,7 +106,6 @@ typing_extensions==4.2.0
 tzdata==2022.7
 tzlocal==4.2
 ua-parser==0.16.1
-urllib3==1.26.9
 validators==0.20.0
 virtualenv==20.17.0
 wasabi==0.9.1
